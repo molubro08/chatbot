@@ -1,0 +1,81 @@
+/* Add this to your static/styles/style.css file */
+
+/* Chat container styling */
+.chatbot-container {
+  transition: all 0.3s ease;
+}
+
+.chatbot-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Chat area scrollbar styling */
+.chat-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-area::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.chat-area::-webkit-scrollbar-thumb {
+  background: #a5b4fc;
+  border-radius: 10px;
+}
+
+.chat-area::-webkit-scrollbar-thumb:hover {
+  background: #818cf8;
+}
+
+/* Message animations */
+.msg {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Input focus effect */
+#textInput:focus {
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* Button hover effects */
+.action-buttons a:hover {
+  transform: translateY(-2px);
+}
+
+/* Custom bubble tail styling */
+.left-msg .msg-bubble::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 15px;
+  border-width: 10px 10px 0 0;
+  border-style: solid;
+  border-color: transparent #e0e7ff transparent transparent;
+}
+
+.right-msg .msg-bubble::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 15px;
+  border-width: 0 10px 10px 0;
+  border-style: solid;
+  border-color: transparent transparent transparent #4f46e5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .msg-bubble {
+    max-width: 80%;
+  }
+}
